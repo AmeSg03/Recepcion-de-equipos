@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo de Devolución de Dispositivos Tecnológicos</title>
+    <link rel="stylesheet" href="Dev.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Direccion de Sistemas y Tecnológias de la Información</h1>
+            <h2>Recibo de Devolución de Dispositivos Tecnológicos</h2>
+        </div>
+
+        <form id="returnForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="inventoryNo">No. De Inventario:</label>
+                    <input type="text" id="inventoryNo" name="inventoryNo" required>
+                </div>
+                <div class="form-group">
+                    <label for="folioNo">No. De Folio:</label>
+                    <input type="text" id="folioNo" name="folioNo" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="serialNo">No. De serie:</label>
+                    <input type="text" id="serialNo" name="serialNo" required>
+                </div>
+                <div class="form-group">
+                    <label for="brand">Marca:</label>
+                    <input type="text" id="brand" name="brand" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="model">Modelo:</label>
+                    <input type="text" id="model" name="model" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Fecha:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="accessories">Accesorios entregados:</label>
+                <textarea id="accessories" name="accessories" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="solution">Solución:</label>
+                <textarea id="solution" name="solution" rows="4" required></textarea>
+            </div>
+
+            <div class="signature-section">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="deliveredBy">Persona que entrega:</label>
+                        <input type="text" id="deliveredBy" name="deliveredBy" required>
+                        <input type="hidden" id="signatureDelivered" name="signatureDelivered">
+                        <canvas id="signature-pad-delivered" width="400" height="200" style="border:1px solid #000000;"></canvas>
+                        <button type="button" id="clear-signature-delivered">Limpiar Firma</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="receivedBy">Persona que recibe:</label>
+                        <input type="text" id="receivedBy" name="receivedBy" required>
+                        <input type="hidden" id="signatureReceived" name="signatureReceived">
+                        <canvas id="signature-pad-received" width="400" height="200" style="border:1px solid #000000;"></canvas>
+                        <button type="button" id="clear-signature-received">Limpiar Firma</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;" class="no-print">
+                <button type="button" onclick="guardarDevolucion()" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px;">
+                    Guardar Recibo
+                </button>
+                <button type="button" onclick="window.print()" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                    Imprimir
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="Dev.js"></script>
+    <script src="signature.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/ajax.js"></script>
+</body>
+</html>

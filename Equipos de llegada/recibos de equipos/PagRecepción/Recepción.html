@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo de Dispositivos Tecnológicos</title>
+    <link rel="stylesheet" href="Rep.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Recibo de Dispositivos Tecnológicos</h1>
+            <div class="date-section">
+                <div class="date-label">Fecha de recepción:</div>
+                <input type="date" id="receptionDate" name="receptionDate" required>
+            </div>
+        </div>
+
+        <form id="deviceForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="inventoryNo">No. De Inventario:</label>
+                    <input type="text" id="inventoryNo" name="inventoryNo" required>
+                </div>
+                <div class="form-group">
+                    <label for="serialNo">No. De serie:</label>
+                    <input type="text" id="serialNo" name="serialNo" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descripción del Equipo:</label>
+                <textarea id="description" name="description" rows="3"></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="brand">Marca:</label>
+                    <input type="text" id="brand" name="brand">
+                </div>
+                <div class="form-group">
+                    <label for="model">Modelo:</label>
+                    <input type="text" id="model" name="model">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="accessories">Accesorios Entregados:</label>
+                <textarea id="accessories" name="accessories" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="passwords">Contraseñas del equipo:</label>
+                <input type="text" id="passwords" name="passwords">
+            </div>
+
+            <div class="section-title">Detalles de recepción</div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="department">Departamento de Origen:</label>
+                    <input type="text" id="department" name="department">
+                </div>
+                <div class="form-group">
+                    <label for="extension">Ext:</label>
+                    <input type="text" id="extension" name="extension">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="deliveredBy">Persona que entrega:</label>
+                    <input type="text" id="deliveredBy" name="deliveredBy" required>
+                    <div class="signature-area">Firma</div>
+                </div>
+                <div class="form-group">
+                    <label for="receivedBy">Persona que recibe:</label>
+                    <input type="text" id="receivedBy" name="receivedBy" required>
+                    <div class="signature-area">Firma</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="userIssue">¿Falla Indicada Por El Usuario?</label>
+                <textarea id="userIssue" name="userIssue" rows="3"></textarea>
+            </div>
+
+            <div class="buttons no-print">
+                <button type="submit" class="btn btn-save">
+                    Guardar Recibo
+                </button>
+                <button type="button" onclick="window.print()" class="btn btn-print">
+                    Imprimir
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/ajax.js"></script>
+    <script src="Rep.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo de Diagnósticos de Dispositivos Tecnológicos</title>
+    <link rel="stylesheet" href="Dig.css">
+</head>
+<body>
+
+    <form id="Titulo">
+        <div class="container">
+            <div class="header">
+                <h1>Recibo de Diagnósticos de Dispositivos Tecnológicos</h1>
+            </div>
+    
+            <div class="form-group">
+                <label for="date">Fecha:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+    </form>
+    
+
+        <form id="diagnosticForm" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="inventoryNo">No. De Inventario:</label>
+                    <input type="text" id="inventoryNo" name="inventoryNo" required>
+                </div>
+                <div class="form-group">
+                    <label for="folioNo">No. De Folio:</label>
+                    <input type="text" id="folioNo" name="folioNo" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="serialNo">No. De serie:</label>
+                    <input type="text" id="serialNo" name="serialNo" required>
+                </div>
+                <div class="form-group">
+                    <label for="brand">Marca:</label>
+                    <input type="text" id="brand" name="brand" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="model">Modelo:</label>
+                    <input type="text" id="model" name="model" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="diagnosis">Diagnóstico del Equipo:</label>
+                <textarea id="diagnosis" name="diagnosis" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="solutions">Posibles soluciones:</label>
+                <textarea id="solutions" name="solutions" rows="4" required></textarea>
+            </div>
+
+            <div class="authorization-section">
+                <label>Requiere Formateo:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="formatting" value="autorizo"> Autorizo
+                    </label>
+                    <label>
+                        <input type="radio" name="formatting" value="noAutorizo"> No autorizo
+                    </label>
+                </div>
+                
+                <div class="note-box">
+                    <strong>Nota:</strong> En caso de un formateo, al usuario se le devolvera el equipo para que realice su respaldo, si fuera nesesario que no pueda realizarlo por que el equipo ya no enciende solo si es posible se le apoyara con el resplado.
+                </div>
+            </div>
+
+            <div class="important-note">
+                <strong>Nota importante:</strong> En cambio de un componente y si no se cuenta en la Direccion de Sistemas y Tecnologias de La Información, se tendra que levantar un oficio a Dirección correspondiente.
+            </div>
+            
+            <div class="important-note"> 
+                <strong>Nota importante:</strong> En caso de un mal uso del dispositivo se levantara un oficio a la delegacion, hasta que respondan se le dara una respuesta de lo que procedera.
+            </div>
+
+            <div class="form-group">
+                <label for="signature">Firma:</label>
+                <input type="hidden" id="signature" name="signature">
+                <canvas id="signature-pad" width="400" height="200" style="border:1px solid #000000;"></canvas>
+                <button type="button" id="clear-signature">Limpiar Firma</button>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                    Guardar Diagnóstico
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="Dig.js"></script>
+    <script src="signature.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/ajax.js"></script>
+    <script>
+    </script>
+</body>
+</html>

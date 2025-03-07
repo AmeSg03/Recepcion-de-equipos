@@ -1,0 +1,81 @@
+<?php include 'conexion.php'; ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Dispositivos Tecnológicos</title>
+    <link rel="stylesheet" href="Prin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Sistema de Gestión de Dispositivos Tecnológicos</h1>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" 
+                   class="search-input" 
+                   placeholder="Buscar por No. Inventario, No. Folio, No. Serie, Marca o Modelo..."
+                   id="searchInput">
+            <button class="search-button" onclick="performSearch()">
+                <i class="fas fa-search"></i> Buscar
+            </button>
+        </div>
+
+        <div class="search-info">
+            <strong>Información de búsqueda:</strong>
+            <p>Puede realizar búsquedas utilizando cualquiera de los siguientes campos:</p>
+            <ul>
+                <li>Número de Inventario</li>
+                <li>Número de Folio</li>
+                <li>Número de Serie</li>
+                <li>Marca del dispositivo</li>
+                <li>Modelo del dispositivo</li>
+            </ul>
+            <p>Ingrese cualquiera de estos datos en el campo de búsqueda para encontrar el dispositivo deseado.</p>
+        </div>
+
+        <div class="main-buttons">
+            <a href="../PagRecepción/Recepción.html" class="main-button btn-reception">
+                <i class="fas fa-laptop"></i>
+                Recibo de Recepción
+            </a>
+            <a href="../PagDiagnostico/Diagnostico.html" class="main-button btn-diagnostic">
+                <i class="fas fa-stethoscope"></i>
+                Recibo de Diagnóstico
+            </a>
+            <a href="../PagDevolucion/Devolución.html" class="main-button btn-return">
+                <i class="fas fa-undo-alt"></i>
+                Recibo de Devolución
+            </a>
+        </div>
+
+        <section id="resultsSection" class="results-section">
+            <h3>Resultados de la búsqueda</h3>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>No. Inventario</th>
+                        <th>No. Folio</th>
+                        <th>No. Serie</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsBody">
+                    <!-- Los resultados se insertarán aquí dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+
+      
+    </div>
+
+    <script src="Prin.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/ajax.js"></script>
+</body>
+</html>
